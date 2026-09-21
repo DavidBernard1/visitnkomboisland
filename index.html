@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Nkombo Island 2.0</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#081421;color:#fff}
+header{position:fixed;top:0;width:100%;padding:15px 8%;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(0,0,0,.5);backdrop-filter:blur(10px)}
+header h2{color:#FFD166}
+nav a{color:#fff;text-decoration:none;margin-left:18px}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover;
+display:flex;justify-content:center;align-items:center;text-align:center}
+.overlay{background:rgba(0,0,0,.55);padding:35px;border-radius:15px}
+.overlay h1{font-size:55px}
+.btn{display:inline-block;margin-top:20px;padding:14px 30px;
+background:#FFD166;color:#111;text-decoration:none;border-radius:30px;font-weight:bold}
+section{padding:80px 8%}
+h2{text-align:center;margin-bottom:20px;color:#FFD166}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#102135;border-radius:12px;overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card h3,.card p{padding:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+form{display:grid;gap:12px;max-width:650px;margin:auto}
+input,select,textarea{padding:12px;border:none;border-radius:8px}
+button{padding:13px;background:#00B4D8;color:#fff;border:none;border-radius:8px;cursor:pointer}
+.payment{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:35px}
+.paybox{background:#102135;padding:18px;border-radius:12px}
+footer{background:#000;padding:30px;text-align:center;color:#bbb}
+.whatsapp{position:fixed;bottom:20px;right:20px;width:62px;height:62px;
+background:#25D366;color:#fff;border-radius:50%;display:flex;
+justify-content:center;align-items:center;font-size:32px;
+text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+@media(max-width:768px){
+.overlay h1{font-size:36px}
+nav{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Visit Nkombo</h2>
+<nav>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#book">Booking</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="overlay">
+<h1>Welcome to Nkombo Island</h1>
+<p>Discover the beauty of Lake Kivu, culture and tourism.</p>
+<a href="#book" class="btn">Book Now</a>
+</div>
+</section>
+
+<section id="about">
+<h2>About Nkombo Island</h2>
+<p style="text-align:center;max-width:800px;margin:auto;line-height:1.8">
+Nkombo Island is one of Rwanda's beautiful islands located in Lake Kivu.
+Experience beaches, fishing, local culture and unforgettable sunsets.
+</p>
+</section>
+
+<section>
+<h2>Top Experiences</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b38d1d3?auto=format&fit=crop&w=800&q=80">
+<h3>Luxury Beach</h3>
+<p>Enjoy peaceful beaches and beautiful views.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80">
+<h3>Fishing Tour</h3>
+<p>Meet local fishermen on Lake Kivu.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=800&q=80">
+<h3>Cultural Experience</h3>
+<p>Traditional dance, music and community life.</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=600&q=80">
+</div>
+</section>
+
+<section id="book">
+<h2>Book Your Trip</h2>
+
+<form action="https://formsubmit.co/davidimanishimwe29@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Nkombo Island Booking">
+
+<input type="text" name="Full Name" placeholder="Full Name" required>
+
+<input type="email" name="Email" placeholder="Email Address" required>
+
+<input type="tel" name="Phone" placeholder="Phone Number" required>
+
+<input type="date" name="Arrival Date" required>
+
+<select name="Package" required>
+<option value="">Choose Package</option>
+<option>Luxury Beach</option>
+<option>Fishing Tour</option>
+<option>Cultural Tour</option>
+</select>
+
+<textarea name="Message" rows="5" placeholder="Special Request"></textarea>
+
+<button type="submit">SEND BOOKING</button>
+
+</form>
+
+<div class="payment">
+
+<div class="paybox">
+<h3>Visa Payment</h3><br>
+<input placeholder="Card Number"><br><br>
+<input placeholder="MM/YY"><br><br>
+<input placeholder="CVV"><br><br>
+<button>Pay Visa</button>
+</div>
+
+<div class="paybox">
+<h3>MTN MoMo</h3><br>
+<input placeholder="0789 600 279"><br><br>
+<button>Pay MoMo</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<h3>Visit Nkombo Island</h3>
+<p>Rusizi District • Western Province • Rwanda</p>
+<p>Email: davidimanishimwe29@gmail.com</p>
+<p>WhatsApp: +250 789 600 279</p>
+<br>
+© 2026 David Imanishimwe. All Rights Reserved.
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/250789600279?text=Hello%20David,%20I%20want%20to%20book%20a%20trip%20to%20Nkombo%20Island."
+target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+document.querySelector("form").addEventListener("submit",function(){
+alert("Booking submitted! First time: activate FormSubmit from your Gmail.");
+});
+</script>
+
+</body>
+</html>
