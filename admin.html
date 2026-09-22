@@ -1,0 +1,82 @@
+<section id="admin">
+
+<h2>Admin Dashboard V3.1</h2>
+
+<div class="dashboard">
+
+  <div style="display:flex;gap:10px;margin-bottom:20px">
+    <input id="user" placeholder="Admin Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="panel" style="display:none">
+
+    <div class="stats">
+
+      <div class="stat">
+        <h3 id="v">0</h3>
+        <small>Visitors</small>
+      </div>
+
+      <div class="stat">
+        <h3 id="b">0</h3>
+        <small>Bookings</small>
+      </div>
+
+      <div class="stat">
+        <h3>4.8 ★</h3>
+        <small>Average Rating</small>
+      </div>
+
+      <div class="stat">
+        <h3>5</h3>
+        <small>Countries</small>
+      </div>
+
+    </div>
+
+    <br>
+
+    <h3>Live Booking Requests</h3>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Package</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody id="bookingRows">
+      </tbody>
+
+    </table>
+
+    <br>
+
+    <h3>Visitors Reviews</h3>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Visitor</th>
+          <th>Country</th>
+          <th>Attraction</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+
+      <tbody id="reviewRows"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+</section>
