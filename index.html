@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  
+<img src="logo.png" alt="Logo">
+<link rel="icon" href="logo.png">
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 32×32 Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
 
   <!-- Optional: Apple devices -->
   <link rel="apple-touch-icon" href="logo.png">
-<title><B>NKOMBO ISLAND</B></title>
+<title>NKOMBO ISLAND</title>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -723,8 +724,7 @@ footer{
 
 
 <body>
-<img src="logo.png" alt="Logo">
-<link rel="icon" href="logo.png">
+
 
 <!-- ==============================
      HEADER
@@ -1073,71 +1073,34 @@ src="https://maps.google.com/maps?q=Nkombo%20Island%20Rwanda&t=&z=13&ie=UTF8&iwl
      BOOKING
 ============================== -->
 
-<section id="book">
+<form id="bookingForm">
 
-<h2>
-    Book Your Trip
-</h2>
+<input name="Name" placeholder="Full Name" required>
 
-<div class="booking">
+<input type="email" name="Email" placeholder="Email" required>
 
+<input name="Country" placeholder="Country" required>
 
-<form action="https://formsubmit.co/davidimanishimwe29@gmail.com"
-method="POST">
+<input name="Phone" placeholder="Phone Number" required>
 
-<input type="hidden"
-name="_captcha"
-value="false">
+<input type="date" name="Arrival Date" required>
 
-<input type="hidden"
-name="_subject"
-value="New Nkombo Booking">
+<select name="Package" required>
 
-<input
-name="Name"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-name="Email"
-placeholder="Email"
-required>
-
-<input
-type="date"
-name="Arrival Date"
-required>
-
-<select name="Package">
-
-<option>
-    Luxury Beach
-</option>
-
-<option>
-    Fishing Tour
-</option>
-
-<option>
-    Cultural Tour
-</option>
+<option>Luxury Beach</option>
+<option>Fishing Tour</option>
+<option>Cultural Tour</option>
 
 </select>
 
-<textarea
-name="Message"
-placeholder="Special Request">
-</textarea>
+<textarea name="Message"
+placeholder="Special Request"></textarea>
 
-<button>
-    SEND BOOKING
+<button type="submit">
+SEND BOOKING
 </button>
 
 </form>
-
-
-
 <div>
 
 <h3>
@@ -1646,6 +1609,138 @@ books++;
 localStorage.setItem("books",books);
 
 });
+
+/* =================================
+   VERSION 3.1 DATABASE
+================================= */
+
+let bookings =
+JSON.parse(localStorage.getItem("nkomboBookings")) || [];
+
+let reviews = [
+{
+name:"John Doe",
+country:"Rwanda",
+attraction:"Luxury Beach",
+rating:"★★★★★"
+},
+{
+name:"Amina Musa",
+country:"Uganda",
+attraction:"Fishing Tour",
+rating:"★★★★☆"
+},
+{
+name:"James Otieno",
+country:"Kenya",
+attraction:"Cultural Tour",
+rating:"★★★★★"
+}
+];
+
+function renderDashboard(){
+
+const bookingRows =
+document.getElementById("bookingRows");
+
+const reviewRows =
+document.getElementById("reviewRows");
+
+bookingRows.innerHTML="";
+reviewRows.innerHTML="";
+
+bookings.forEach((b)=>{
+
+bookingRows.innerHTML += `
+<tr>
+<td>${b.name}</td>
+<td>${b.country}</td>
+<td>${b.package}</td>
+<td>Pending</td>
+</tr>`;
+
+});
+
+reviews.forEach((r)=>{
+
+reviewRows.innerHTML += `
+<tr>
+<td>${r.name}</td>
+<td>${r.country}</td>
+<td>${r.attraction}</td>
+<td>${r.rating}</td>
+</tr>`;
+
+});
+
+document.getElementById("b").innerHTML =
+bookings.length;
+
+document.getElementById("v").innerHTML =
+localStorage.getItem("visits") || 0;
+
+}
+
+/* BOOKING FORM */
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const data = new FormData(this);
+
+bookings.unshift({
+
+name:data.get("Name"),
+email:data.get("Email"),
+country:data.get("Country"),
+phone:data.get("Phone"),
+package:data.get("Package")
+
+});
+
+localStorage.setItem(
+"nkomboBookings",
+JSON.stringify(bookings)
+);
+
+renderDashboard();
+
+alert("Booking Saved Successfully!");
+
+this.reset();
+
+});
+
+/* ADMIN LOGIN */
+
+function login(){
+
+const username =
+document.getElementById("user").value;
+
+const password =
+document.getElementById("pass").value;
+
+if(username=="David" &&
+password=="Nkombo2026"){
+
+document.getElementById("panel")
+.style.display="block";
+
+renderDashboard();
+
+alert("Welcome David");
+
+}else{
+
+alert("Wrong Username or Password");
+
+}
+
+}
 
 </script>
 
