@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>David Imanishimwe WebDeveloper</title>
+<title>David #Nkombo Island</title>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -689,26 +689,29 @@ footer{
     }
 }
 
-.whatsapp{
+
+.whatsapp-chat{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:60px;
-    height:60px;
+    width:65px;
+    height:65px;
     background:#25D366;
     color:white;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size:32px;
     text-decoration:none;
-    font-size:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-    z-index:999;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+    z-index:9999;
+    transition:.3s;
 }
 
-.whatsapp:hover{
+.whatsapp-chat:hover{
     transform:scale(1.1);
+    background:#1ebe5d;
 }
 </style>
 
@@ -1070,25 +1073,38 @@ src="https://maps.google.com/maps?q=Nkombo%20Island%20Rwanda&t=&z=13&ie=UTF8&iwl
 <h2>
     Book Your Trip
 </h2>
-<form action="https://formsubmit.co/davidimanishimwe29@gmail.com" method="POST">
 
-  <input type="text" name="Full Name" placeholder="Your Name" required>
+<div class="booking">
 
-  <input type="email" name="Email" placeholder="Your Email" required>
 
-  <input type="tel" name="Phone" placeholder="Phone Number" required>
+<form action="https://formsubmit.co/davidimanishimwe29@gmail.com"
+method="POST">
 
-  <input type="date" name="Visit Date" required>
+<input type="hidden"
+name="_captcha"
+value="false">
 
-  <textarea name="Message" rows="5" placeholder="Your message..." required></textarea>
+<input type="hidden"
+name="_subject"
+value="New Nkombo Booking">
 
-  <input type="hidden" name="_subject" value="New Nkombo Island Booking">
+<input
+name="Name"
+placeholder="Full Name"
+required>
 
-  <input type="hidden" name="_captcha" value="false">
+<input
+type="email"
+name="Email"
+placeholder="Email"
+required>
 
-  <button type="submit">Book Now</button>
+<input
+type="date"
+name="Arrival Date"
+required>
 
-</form>
+<select name="Package">
 
 <option>
     Luxury Beach
@@ -1283,12 +1299,12 @@ placeholder="************"required>
 </div>
 
 </section>
-<a href="https://wa.me/250789600279"
-   class="whatsapp"
-   target="_blank">
-   💬
+<a href="https://wa.me/250789600279?text=Hello%20David,%20I%20want%20to%20book%20a%20trip%20to%20Nkombo%20Island."
+   class="whatsapp-chat"
+   target="_blank"
+   title="Chat on WhatsApp">
+   <i class="fab fa-whatsapp"></i>
 </a>
-
 
 
 <!-- ==============================
@@ -1409,12 +1425,12 @@ class="twitter">
 © 2026 Visit Nkombo Island. All Rights Reserved.
 
 <br>
+<b>Done & Edited by David Imanishimwe</b>
 
-Done & Edited by <b>David Imanishimwe</b>
 
 <br>
-
 <b>Tel: +250 789 600 279</b>
+
 
 </div>
 
