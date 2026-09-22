@@ -689,6 +689,27 @@ footer{
     }
 }
 
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
 </style>
 
 </head>
@@ -1049,38 +1070,25 @@ src="https://maps.google.com/maps?q=Nkombo%20Island%20Rwanda&t=&z=13&ie=UTF8&iwl
 <h2>
     Book Your Trip
 </h2>
+<form action="https://formsubmit.co/davidimanishimwe29@gmail.com" method="POST">
 
-<div class="booking">
+  <input type="text" name="Full Name" placeholder="Your Name" required>
 
+  <input type="email" name="Email" placeholder="Your Email" required>
 
-<form action="https://formsubmit.co/davidimanishimwe29@gmail.com"
-method="POST">
+  <input type="tel" name="Phone" placeholder="Phone Number" required>
 
-<input type="hidden"
-name="_captcha"
-value="false">
+  <input type="date" name="Visit Date" required>
 
-<input type="hidden"
-name="_subject"
-value="New Nkombo Booking">
+  <textarea name="Message" rows="5" placeholder="Your message..." required></textarea>
 
-<input
-name="Name"
-placeholder="Full Name"
-required>
+  <input type="hidden" name="_subject" value="New Nkombo Island Booking">
 
-<input
-type="email"
-name="Email"
-placeholder="Email"
-required>
+  <input type="hidden" name="_captcha" value="false">
 
-<input
-type="date"
-name="Arrival Date"
-required>
+  <button type="submit">Book Now</button>
 
-<select name="Package">
+</form>
 
 <option>
     Luxury Beach
@@ -1275,6 +1283,11 @@ placeholder="************"required>
 </div>
 
 </section>
+<a href="https://wa.me/250789600279"
+   class="whatsapp"
+   target="_blank">
+   💬
+</a>
 
 
 
