@@ -1069,32 +1069,23 @@ src="https://maps.google.com/maps?q=Nkombo%20Island%20Rwanda&t=&z=13&ie=UTF8&iwl
      BOOKING
 ============================== -->
 
-<form id="bookingForm">
+<form action="https://formsubmit.co/davidimanishimwe29@gmail.com" method="POST">
 
-<input name="Name" placeholder="Full Name" required>
+  <input type="text" name="Full Name" placeholder="Your Name" required>
 
-<input type="email" name="Email" placeholder="Email" required>
+  <input type="email" name="Email" placeholder="Your Email" required>
 
-<input name="Country" placeholder="Country" required>
+  <input type="tel" name="Phone" placeholder="Phone Number" required>
 
-<input name="Phone" placeholder="Phone Number" required>
+  <input type="date" name="Visit Date" required>
 
-<input type="date" name="Arrival Date" required>
+  <textarea name="Message" rows="5" placeholder="Your message..." required></textarea>
 
-<select name="Package" required>
+  <input type="hidden" name="_subject" value="New Nkombo Island Booking">
 
-<option>Luxury Beach</option>
-<option>Fishing Tour</option>
-<option>Cultural Tour</option>
+  <input type="hidden" name="_captcha" value="false">
 
-</select>
-
-<textarea name="Message"
-placeholder="Special Request"></textarea>
-
-<button type="submit">
-SEND BOOKING
-</button>
+  <button type="submit">Book Now</button>
 
 </form>
 <div>
